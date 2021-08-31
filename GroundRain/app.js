@@ -43,7 +43,7 @@ class Ground{
 var rainDrops = []
 
 //Number of drops that will be displayed on the screen
-var numberOfDrops = 20;
+var numberOfDrops = 10;
 
 //Ground object which is starting with 5% blue
 var ground = new Ground(0, 400, 200, 800, 12);
@@ -83,6 +83,7 @@ function draw(){
             console.log(ground.blue)
         }
     })
+    
     ground.rect();
 
 }
