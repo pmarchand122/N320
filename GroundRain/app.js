@@ -5,12 +5,12 @@ class RainDrop{
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.speed = 1 + Math.random() * 20;
+        this.speed = 1 + Math.random() * 10;
     }
 
     update(){
         fill(140,190,250)
-        this.speed = this.speed + .06;
+        this.speed = this.speed;
         this.y = this.y + this.speed;
         this.y++;
         circle(this.x, this.y, this.radius)
@@ -34,10 +34,13 @@ class Ground{
     }
 }
 
+var blue = 12;
+var ground = new Ground(0, 400, 200, 800, blue);
+
 
 
 var rainDrops = []
-var numberOfDrops = 250;
+var numberOfDrops = 10;
 
 for(var i=0; i<numberOfDrops; i++){
     var xPos = 0 + Math.random() * 1000
@@ -49,24 +52,21 @@ function setup(){
     createCanvas(800, 600)
 }
 
+
 function draw(){
     background(34,34,34)
-    
-    var blue = 12;
+
 
     for(var i=0; i < rainDrops.length; i++){
-        
-        var ground = new Ground(0, 400, 200, 800, blue);
-
-
         rainDrops[i].update();
-        if(rainDrops[i].y >= 400){
-            blue+=1;
-            
+
+        if(rainDrops[i].y >= ground.y){
+            rainDrops[i].y = 0;
+            blue++;
             console.log(blue)
-            ground.update();
         }
     }
-    
+
+
     
 }
