@@ -11,30 +11,31 @@ class Instrument {
 }
 
 class Woodwind extends Instrument {
-    constructor(family, verb){
-        super("Quiet", family, verb)
+    constructor(loudness){
+        super(loudness, "Woodwind", "blows")
     }
 }
 
 class Percussion extends Instrument {
-    constructor(family, verb){
-        super("Loud", family, verb)
+    constructor(loudness){
+        super(loudness, "Percussion", "taps")
     }
 }
 
 class StrinG extends Instrument{
-    constructor(family, verb){
-        super("Normal", family, verb)
+    constructor(loudness){
+        super(loudness, "String", "strums")
     }
 }
 
 
 
-var Flute = new Woodwind("Woodwind", "blows")
-var Drum = new Percussion("Percussion", "taps")
-var Violin = new StrinG("String", "strums")
+var Flute = new Woodwind("quiet")
+var Flute2 = new Woodwind("loud")
+var Drum = new Percussion("loud")
+var Violin = new StrinG("normal")
 
-var Instruments = [Flute, Drum, Violin]
+var Instruments = [Flute, Flute2, Drum, Violin]
 
 Instruments.forEach(instrument => {
     instrument.statement();
