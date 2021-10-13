@@ -1,12 +1,12 @@
-let container = document.getElementById("animationContainer")
 let longRect = document.getElementById("longRect")
 let rects = document.getElementsByClassName("smallRect")
 
-TweenMax.from(longRect, {duration: 1, alpha: 0})
+TweenMax.from(longRect, {duration: 3, alpha: 0})
+
 
 for(var i = 0; i < rects.length; i++){
-    TweenMax.from(rects[i], {duration: 1, alpha: 0})
-
+    TweenMax.from(rects[i], {duration: 3, alpha: 0})
+    
     rects[i].addEventListener("mouseover", (event) => {
         TweenMax.to(event.target, {duration:  0.4, width: 310, height: 210, alpha: 0.5})
     })
